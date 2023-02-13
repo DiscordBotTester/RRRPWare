@@ -1,0 +1,74 @@
+-- https://v3rmillion.net/member.php?action=profile&uid=2386065 rep me!
+
+local CoreGui = game:GetService("StarterGui")
+
+CoreGui:SetCore("SendNotification", {
+    Title = "v3rm copied to clipboard";
+    Text = "Works on Synapse X and KRNL only! (I think)";
+    Duration = 5;
+})
+
+setclipboard("https://v3rmillion.net/member.php?action=profile&uid=2386065")
+
+rconsolename('RRP2 Inventory Checker V1.1 Private (Non Malicious)')
+
+rconsoleprint('@@GREEN@@')
+
+rconsoleprint('Endos Economy Stabilizer \n')
+
+rconsoleprint('@@WHITE@@')
+
+rconsoleprint('Thank you for using Endos Inventory Checker!\n')
+
+wait(1)
+
+rconsolewarn('Here you can take peoples money from their banks, reset their cash and get them kicked by anticheat!\n')
+
+wait(1)
+
+rconsoleclear()
+
+rconsoleprint('@@GREEN@@')
+
+rconsoleprint('Input the username of the user you want to steal money from: ')
+local input = rconsoleinput()
+
+rconsoleprint('@@RED@@')
+
+local target = input
+if game.Players:FindFirstChild(target) and game.Players[target]:FindFirstChild('SafeItems') then
+    local player = game.Players[target]
+    if player:FindFirstChild('SafeItems') then
+        rconsoleprint(player.Name.."'s Stats: \n")
+        if player:FindFirstChild('Wallet') then
+            rconsoleprint('\nWallet: \n'..player.Wallet.Value )
+            else rconsoleprint('player doesnt exist!')
+        end
+        if player:FindFirstChild('Money') then
+            rconsoleprint('\nBank: \n'..player.Money.Value)
+        end
+        local ItemNum = 0
+        rconsoleprint('\nSafe: \n')
+        for i,v in pairs(player.SafeItems:GetChildren()) do
+            if v:IsA('StringValue') then
+            ItemNum = ItemNum + 1
+            rconsoleprint(ItemNum..': '..v.Value.. ' \n')
+            end
+        end
+    end
+end 
+
+print("Currently viewing ", target, "'s items.")
+
+rconsoleprint('@@GREEN@@')
+
+rconsoleprint('Stealing users money...')
+
+print("Stealing".. target .."'s money...")
+
+wait(3)
+
+local yourwallet = game.GetService("Players").Wallet
+local victimswallet = game.Players[target].Wallet
+
+if yourwallet.Value => victimswallet.Value then yourwallet.Value + victimswallet.Value end
